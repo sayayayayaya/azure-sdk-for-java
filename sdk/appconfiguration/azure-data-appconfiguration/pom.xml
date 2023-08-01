@@ -115,6 +115,13 @@
     </dependency>
   </dependencies>
 
+  <profiles>
+    <profile>
+      <id>java9plus</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+
       <build>
         <plugins>
           <plugin>
@@ -130,10 +137,10 @@
                 </goals>
                 <configuration>
                   <compilerArgs>
-<!--                    <compilerArg>&#45;&#45;add-modules</compilerArg>-->
-<!--                    <compilerArg>java.sql</compilerArg>-->
-<!--                    <compilerArg>&#45;&#45;add-reads</compilerArg>-->
-<!--                    <compilerArg>com.azure.data.appconfiguration=java.sql</compilerArg>-->
+                    <compilerArg>--add-modules</compilerArg>
+                    <compilerArg>java.sql</compilerArg>
+                    <compilerArg>--add-reads</compilerArg>
+                    <compilerArg>com.azure.data.appconfiguration=java.sql</compilerArg>
                   </compilerArgs>
                 </configuration>
               </execution>
@@ -141,4 +148,6 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+  </profiles>
 </project>
