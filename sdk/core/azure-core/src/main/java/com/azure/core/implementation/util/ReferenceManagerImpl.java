@@ -6,6 +6,7 @@ package com.azure.core.implementation.util;
 import com.azure.core.util.ReferenceManager;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.core.util.logging.LogLevel;
+import com.azure.core.annotation.Android;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
@@ -85,6 +86,7 @@ public final class ReferenceManagerImpl implements ReferenceManager {
     }
 
     @Override
+    @Android
     public void register(Object object, Runnable cleanupAction) {
         Objects.requireNonNull(object, "'object' cannot be null.");
         Objects.requireNonNull(cleanupAction, "'cleanupAction' cannot be null.");
